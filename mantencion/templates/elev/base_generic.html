@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <title>FixElevator</title>
+    <meta charset="UTF-8"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+    <script src="{% static 'js/comunas.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+</head>
+
+<body>
+<header>
+    <div class="header">
+        <div class="row">      
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1 class="text-center" style="color: rgb(51, 8, 206);">FixElevator</h1></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="{% url 'mantencion:inicio' %}"><h3 class="text-center" style="color: rgb(240, 255, 250);">Inicio</h2></a></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="{% url 'mantencion:login' %}"><h3 class="text-center" style="color: azure;">Ingresar</h2></a></div>
+            {% if user.is_authenticated %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="{% url 'mantencion:crearcliente' %}"><h3 class="text-center" style="color: azure;">Crear Cliente</h2></a></div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="{% url 'mantencion:crearorden' %}"><h3 class="text-center" style="color: azure;">Crear Orden</h2></a></div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="{% url 'mantencion:listaclientes' %}"><h3 class="text-center" style="color: azure;">Lista Clientes</h2></a></div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2"><a href="/logout"><h3 class="text-center" style="color: azure;">Salir</h2></a></div>
+            {% endif %}
+        </div>
+    </div>
+</header>
+    {% block content %}
+    {% endblock %}
+<footer>
+    <div class="container" >
+        <div class="row">
+            <div class="col-4">
+                <h5 class="text-left">Contacto</h5>
+                    <img src="{% static 'img/facebookicon.jpg' %}" alt="Facebook" width="30" height="30"  >
+                    <img src="{% static 'img/twitericon.jpg' %}"  alt="Twitter" width="30" height="30" > 
+                    <img src="{% static 'img/instagramicon.jpg' %}"  alt="Instagram" width="30" height="30" >
+                    <img src="{% static 'img/giticon.jpg' %}" alt="GitHub" width="30" height="30" >
+            </div>
+            <div class="col-4"> 
+                <h5 class="text-center">Copyright © 2019-2019 Elevador Todos los derechos reservados.</h5>
+            </div>
+            <div class="col-4">
+                <h5 class="text-right">Ubicación</h5>
+                <h5 class="text-right">Esq Blanca 501, Maipú, Región Metropolitana</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+

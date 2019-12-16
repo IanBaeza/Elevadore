@@ -1,0 +1,39 @@
+{% extends 'elev/base_generic.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="col-sm-12">
+        <div class="text-center">
+            <h3 style="color: rgb(0, 0, 0);;">Bienvenido</h3>
+        </div>
+    </div>
+    
+    <br>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <img src="{% static 'img/ele.jpg' %}" alt="Elevador" style="width:100%;">
+        </div>  
+        <br>              
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div class="text-center">
+                <h4 style="color: rgb(0, 0, 0);">Quienes Somos</h4>
+                <p class="esp" style="color: rgb(0, 0, 0);" ALIGN="justify" >
+                    Somos FixElevator, una empresa con el estándar de calidad mas alto para la mantención, 
+                    reparación, modernización y modeificacion de ascensores en edificios residenciales, 
+                    públicos, comerciales y entre otros, entregando soluciones óptimas y asesorías 
+                    especializadas según los requerimientos del mercado.
+
+                    Cuentamos con profesionales altamente capacitados y con una vasta trayectoria 
+                    en empresas del rubro, lo cual nos permite interactuar con cualquier proyecto ya 
+                    sea de mantención, reparación, modernización o modificacion y contando con el certificacion 
+                    de nuestra Matriz Europea y sus distintas subsidiarias de alrededor del Mundo.
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+<br><br><br><br><br>
+
+{% endblock %}

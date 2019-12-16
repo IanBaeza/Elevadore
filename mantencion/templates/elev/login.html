@@ -1,0 +1,15 @@
+{% extends 'elev/base_generic.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+    <h2 style="color: rgb(255, 255, 255);">Iniciar Sesion</h2>
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+        <button type="submit">Login</button>
+        <br>
+        </form>
+    <hr />
+</div>
+{% endblock %}
